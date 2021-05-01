@@ -1,4 +1,6 @@
 import 'package:devquiz/core/app_gradients.dart';
+import 'package:devquiz/core/app_text_styles.dart';
+import 'package:devquiz/home/widgets/score_card/score_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends PreferredSize {
@@ -6,18 +8,39 @@ class AppBarWidget extends PreferredSize {
       : super(
           preferredSize: Size.fromHeight(250),
           child: Container(
-            decoration: BoxDecoration(gradient: AppGradients.linear),
-            child: Row(
+            height: 250,
+            child: Stack(
               children: [
-                Text("Olá, Eduardo"),
                 Container(
-                  width: 58,
-                  height: 58,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              "https://avatars.githubusercontent.com/u/61914122?v=4"))),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  height: 161,
+                  width: double.maxFinite,
+                  decoration: BoxDecoration(gradient: AppGradients.linear),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text.rich(TextSpan(
+                          text: "Olá,",
+                          style: AppTextStyles.title,
+                          children: [
+                            TextSpan(
+                                text: "Eduardo", style: AppTextStyles.titleBold)
+                          ])),
+                      Container(
+                        width: 58,
+                        height: 58,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    "https://avatars.githubusercontent.com/u/61914122?v=4"))),
+                      ),
+                    ],
+                  ),
                 ),
+                Align(
+                  alignment: Alignment(0, 1.0),
+                  child: ScoreCardWidget(),
+                )
               ],
             ),
           ),
