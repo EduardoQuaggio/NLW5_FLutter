@@ -18,6 +18,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
-    - database/
+    - assets/database/user.json
+    - assets/database/quizzes.json
 
   uses-material-design: true

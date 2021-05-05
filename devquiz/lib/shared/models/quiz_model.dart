@@ -5,9 +5,9 @@ import 'package:devquiz/shared/models/question_model.dart';
 enum Level { facil, medio, dificil, perito }
 
 extension LevelStringExt on String {
-  Level get levelParse => {
+  Level get parse => {
         "facil": Level.facil,
-        "Medio": Level.medio,
+        "medio": Level.medio,
         "dificil": Level.dificil,
         "perito": Level.perito
       }[this]!;
@@ -53,7 +53,7 @@ class QuizModel {
           map['questions']?.map((x) => QuestionModel.fromMap(x))),
       questionAnswered: map['questionAnswered'],
       imagem: map['imagem'],
-      level: map['level'].toString().levelParse,
+      level: map['level'].toString().parse,
     );
   }
 
