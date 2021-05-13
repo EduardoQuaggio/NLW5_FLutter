@@ -61,7 +61,7 @@ class ResultPage extends StatelessWidget {
                           label: "Compartilhar",
                           onTap: () {
                             Share.share(
-                                'check out my website https://example.com');
+                                'DevQuiz NLW 5 - Flutter: Resultado do Quiz: $title \n Obtive: ${(result / lenght) * 100}% de aproveitamento');
                           }),
                     )),
                   ],
